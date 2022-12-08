@@ -1,0 +1,48 @@
+<h1 mat-dialog-title>{{action}}</h1>
+<div mat-dialog-content >
+  <form [formGroup]="TaskForm">
+
+    <mat-form-field appearance="outline">
+    <mat-label>الاسم</mat-label>
+    <input matInput formControlName="name"
+    placeholder="اسم المهمة">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>الزصف</mat-label>
+    <textarea  matInput formControlName="description"
+    placeholder="وصف المهمة"
+    (change)="onCommentChange()">
+  </textarea>
+  </mat-form-field>
+  <mat-form-field appearance="outline" >
+    <mat-label>تاريخ بداية المهمه</mat-label>
+    <input matInput formControlName="datestart" [matDatepicker]="picker">
+    <mat-datepicker-toggle  matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field appearance="outline" >
+    <mat-label>تاريخ نهاية المهمة</mat-label>
+    <input matInput formControlName="dateend"  [matDatepicker]="picker1">
+    <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+    <mat-datepicker #picker1></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>الموظف</mat-label>
+    <mat-select formControlName="enployeeToDo" placeholder="اختر الموظف">
+      <mat-option value="أشرف">أشرف</mat-option>
+      <mat-option value="مهند">مهند</mat-option>
+      <mat-option value="أيمن">أيمن</mat-option>
+      <mat-option value="بشير">بشير</mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  
+  <div mat-dialog-action>
+    <button mat-stroked-button color="primary"(click)="onClick()">{{actionbtn}}</button>
+    <button mat-stroked-button mat-dialog-close
+    style="margin-left:8px" color="warn">خروج</button>
+
+  </div>
+ </form>
+
+</div>

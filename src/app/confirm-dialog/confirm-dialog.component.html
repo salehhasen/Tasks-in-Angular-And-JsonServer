@@ -1,0 +1,9 @@
+<div class="confirm-dialog-container">
+    <div class="content-container">
+        <mat-icon id="close-icon" [mat-dialog-close]="false"(click)="closedialog()">close</mat-icon>
+        <br/>
+        <span class="content-span full-width">هل انت متاكد من الحدف</span>      
+    </div>
+    <button mat-flat-button id="YesButton"[mat-dialog-close]="true">نعم</button>
+    <button mat-flat-button id="NoButton" [mat-dialog-close]="false">لا</button>
+</div>
